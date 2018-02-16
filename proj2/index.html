@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>AnimeQuirys</title>
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<div id="containor">
+	<div id="header">
+		<header>
+			<nav>
+			</nav>
+		</header>
+	</div>
+	<div id="body">
+		<body>
+			<div id="shout_out">
+				<h2>{{ message }}</h2>
+			</div>
+			<div class="tab">
+				<button class="tablinks" onclick="openSearch(event, 'Films')">Films</button>
+				<button class="tablinks" onclick="openSearch(event, 'Characters')">Characters</button>
+				<button class="tablinks" onclick="openSearch(event, 'Locations')">Locations</button>
+			<div class="tabcontent">
+			</div>
+
+			<div id="Films" class="tabcontent">
+				<div id="hint">
+					<p>example: Castle in the Sky</p>
+				</div>
+				<div id="serch_space">
+					<input v-model="search">
+					<button v-on:click="send_search">send</button>
+				</div>
+				<div id="content">
+					<h2>Films</h2>
+				</div>
+				<div id="response">
+					
+				</div>
+			</div>
+			<div id="Characters" class="tabcontent">
+				<div id="hint">
+					<p>example: Cat King</p>
+				</div>
+				<div id="serch_space">
+					<input v-model="search">
+					<button v-on:click="send_search">send</button>
+				</div>
+				<div id="content">
+					<h2>Characters</h2>
+				</div>
+				<div id="response">
+					
+				</div>
+			</div>
+			<div id="Locations" class="tabcontent">
+				<div id="hint">
+					<p>example: Irontown</p>
+				</div>
+				<div id="serch_space">
+					<input v-model="search">
+					<button v-on:click="send_search">send</button>
+				</div>
+				<div id="content">
+					<h2>Locations</h2>
+				</div>
+				<div id="response">
+					
+				</div>
+			</div>
+			<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+			<script src="/script.js"></script>
+		</body>
+	</div>
+	<div id="footer">
+		<footer>
+			<p>page by Benjamin Davis</p>
+			<a href="https://github.com/">github</a>
+		</footer>
+	</div>
+	</div> 
+</html>
