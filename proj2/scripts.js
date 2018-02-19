@@ -111,7 +111,12 @@ function parseContent(json) {
 	for(var x in json) {
 		console.log('json is ' + json[x]);
 		console.log('button for ' + json[x]["name"]);
-		html += makeAccordion(json[x]["name"]);
+		if(json[x]["name"] == undefined){
+			html+=makeAccordion(json[x]["title"]);
+		}
+		else {
+			html += makeAccordion(json[x]["name"]);
+		}
 		html += makePannel(json[x]);
 	}
 	return html;
