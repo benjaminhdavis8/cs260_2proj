@@ -6,33 +6,52 @@ nav {
 }
 
 /* style the containor and border views */
-.containor {
+#containor {
 	min-height:100%;
 	width:100%;
 	padding:0px;
+	padding-bottom:10px;
 	margin:0px;
 	position:relative:
 }
 
-.header {
+#header {
 	top:0;
 	width:100%;
-	padding:0px;
+	padding:10px;
 	margin:0px;
 	position:absolute;
+	/*background: #ff0;*/
 }
 
-.body {
-	padding:0px;
+html, body {
+	margin:0;
+	padding:0;
+	height:100%;
+}
+
+#body {
+	padding:10px;
 	margin:0px;
+	height:100%;
+	width:100%;
 	border-bottom:80px;
-	position:absolute;
 }
 
-.footer {
+#footer {
+	position:absolute;
 	height:80px;
-	bottom:0;
+	width:100%;
+	padding:10px;
+/*	bottom:0;*/
 	text-color:gray;
+/*	background:#6cf;*/
+}
+
+#shout_out {
+	width:100%;
+	padding-top:70px;
+	position:relative;
 }
 
 
@@ -75,3 +94,55 @@ nav {
 	border:1px solid #ccc;
 	border-top:none;
 }
+
+/* Style the accordian */
+.accordion {
+	heightStyle:"content;";
+}
+
+/* Style the active acordian divs */
+.ui-state-active {
+	border-color:black;
+	background:white;
+	color:black;
+}
+
+/* apply a hidden view */
+.hidden {
+	display:none;
+}
+
+/* add a shown view */
+.shown {
+	display:block;
+}
+
+/* style wraper */
+.response_wraper {
+	padding:0;
+	margin:0;
+}
+
+.accordion {
+	background-color:#eee;
+	color:#444;
+	cursor:pointer;
+	padding:18px;
+	width:100%;
+	text-align:left;
+	border:none;
+	outline:none;
+	transition:0.4s;
+}
+
+.active, .accordion:hover {
+	background-color:#ccc;
+}
+
+.panel {
+	padding:0 18px;
+	background-color:white;
+	display:none;
+	overflow:hidden;
+}
+

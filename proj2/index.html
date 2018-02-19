@@ -2,27 +2,34 @@
 <html>
 	<head>
 		<title>AnimeQuirys</title>
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 		<link rel="stylesheet" href="styles.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script>
+  $( function() {
+    $( "#accordion" ).accordion();
+  } );
+		</script>
 	</head>
 	<div id="containor">
 	<div id="header">
 		<header>
 			<nav>
-			</nav>
+			<nav>
 		</header>
 	</div>
 	<div id="body">
-		<body>
+		<body onload="initMessage('Click on a tab to get started')">
 			<div id="shout_out">
 				<h2>{{ message }}</h2>
 			</div>
 			<div class="tab">
-				<button class="tablinks" onclick="openSearch(event, 'Films')">Films</button>
-				<button class="tablinks" onclick="openSearch(event, 'Characters')">Characters</button>
-				<button class="tablinks" onclick="openSearch(event, 'Locations')">Locations</button>
-			<div class="tabcontent">
+				<button class="tablinks" onclick="openTab(event, 'Films')">Films</button>
+				<button class="tablinks" onclick="openTab(event, 'Characters')">Characters</button>
+				<button class="tablinks" onclick="openTab(event, 'Locations')">Locations</button>
 			</div>
-
 			<div id="Films" class="tabcontent">
 				<div id="hint">
 					<p>example: Castle in the Sky</p>
@@ -34,10 +41,49 @@
 				<div id="content">
 					<h2>Films</h2>
 				</div>
-				<div id="response">
-					
-				</div>
-			</div>
+<div id="Films_response" class="response_wraper">
+  <button class="accordion" onclick="togleAccordion(this)">Section 1</button>
+  <div class="panel">
+    Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+    ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+    amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+    odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+  </div> <!--/panel-->
+  <button class="accordion" onclick="togleAccordion(this)">Section 2</button>
+  <div class="panel">
+    Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+    purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+    velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+    suscipit faucibus urna.
+  </div> <!--/panel-->
+  <button class="accordion" onclick="togleAccordion(this)">Section 3</button>
+  <div class="panel">
+    Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+    Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+    ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+    lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+    <ul>
+      <li>List item one</li>
+      <li>List item two</li>
+      <li>List item three</li>
+    </ul>
+  </div> <!--/panel-->
+  <button class="accordion" onclick="togleAccordion(this)">Section 4</button>
+  <div class="panel">
+    <p>
+    Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+    et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+    faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+    mauris vel est.
+    </p>
+    <p>
+    Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+    inceptos himenaeos.
+    </p>
+  </div> <!--/panel-->
+</div> <!--/response_wraper-->
+			</div> <!--/Films-->
 			<div id="Characters" class="tabcontent">
 				<div id="hint">
 					<p>example: Cat King</p>
@@ -49,8 +95,8 @@
 				<div id="content">
 					<h2>Characters</h2>
 				</div>
-				<div id="response">
-					
+				<div id="Characters_response" class="response_wraper">
+					{{ response }}
 				</div>
 			</div>
 			<div id="Locations" class="tabcontent">
@@ -64,18 +110,18 @@
 				<div id="content">
 					<h2>Locations</h2>
 				</div>
-				<div id="response">
-					
+				<div id="Locations_response" class="response_wraper">
+					{{ response }}
 				</div>
 			</div>
 			<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-			<script src="/script.js"></script>
+			<script src="/scripts.js"></script>
 		</body>
 	</div>
 	<div id="footer">
 		<footer>
 			<p>page by Benjamin Davis</p>
-			<a href="https://github.com/">github</a>
+			<a href="https://github.com/benjaminhdavis8/cs260_2proj">github</a>
 		</footer>
 	</div>
 	</div> 
